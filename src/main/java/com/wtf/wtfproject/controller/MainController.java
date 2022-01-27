@@ -10,7 +10,7 @@ public class MainController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "Главная страница");
-        return "home        use https://wtf-project.herokuapp.com to get pong";
+        return "home        use https://wtf-project.herokuapp.com/ping to get pong";
     }
 
     @GetMapping("/ping")
