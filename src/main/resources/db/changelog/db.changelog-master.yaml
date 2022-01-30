@@ -1,0 +1,9 @@
+databaseChangelog:
+  - include:
+    file: 001-create-schema.sql
+    relativeToChangelogFile: true
+  - include:
+    file: 002-add-table-student.yaml
+    relativeToChangelogFile: true
+  - include:
+    file: 003-create-hibernate-sequence.sql
