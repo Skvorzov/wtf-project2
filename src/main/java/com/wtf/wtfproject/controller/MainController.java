@@ -29,7 +29,7 @@ public class MainController {
     }
 
     @GetMapping("/students")
-    public String showAllStudents() {
-        return userRepository.findAll().toString();
+    public List<Student> showAllStudents() {
+        return userRepository.findAll();
     }
 }
