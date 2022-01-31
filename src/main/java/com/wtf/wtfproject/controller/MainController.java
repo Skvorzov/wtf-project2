@@ -34,7 +34,11 @@ public class MainController {
     }
 
     @GetMapping("/create-random-student")
-    public String createRandomStudent(){
-        return "ERROR 404. It will be soon";
+    public Student createRandomStudent(){
+        String[] name = {"Dima", "Evgen", "Sergiy", "Ivan", "Vlad", "Nikita", "Egor", "Roma", "Gleb"};
+        int i = (int) (Math.random()*9);
+        Student student = new Student();
+        student.setName(name[i]);
+        return userRepository.save(student);
     }
 }
