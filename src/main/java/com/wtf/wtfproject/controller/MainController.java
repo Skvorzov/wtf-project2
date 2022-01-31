@@ -15,15 +15,14 @@ public class MainController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("title", "Главная страница");
-        return "home use https://wtf-project.herokuapp.com/ping to get pong";
+        return "use https://wtf-project2.herokuapp.com/ping to get pong";
     }
 
     @GetMapping("/ping")
     public String ping(){
-        Student student = new Student();
-        student.setName("Petro");
-        userRepository.save(student);
+        //Student student = new Student();
+        //student.setName("Petro");
+        //userRepository.save(student);
         return "pong";
     }
 }
