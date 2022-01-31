@@ -17,7 +17,7 @@ public class MainController {
 
     @GetMapping("/")
     public String home(Model model) {
-        return "use https://wtf-project2.herokuapp.com/ping to add Petro to the table" + "use https://wtf-project2.herokuapp.com/students to show all students" + "use https://wtf-project2.herokuapp.com//create-random-student to create random student";
+        return "use https://wtf-project2.herokuapp.com/ping to add Petro to the table " + "_____" + "use https://wtf-project2.herokuapp.com/students to show all students " + "_____" + " use https://wtf-project2.herokuapp.com//create-random-student to create random student";
     }
 
     @GetMapping("/ping")
