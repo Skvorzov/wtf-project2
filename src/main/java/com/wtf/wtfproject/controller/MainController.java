@@ -20,9 +20,9 @@ public class MainController {
 
     @GetMapping("/ping")
     public String ping(){
-        //Student student = new Student();
-        //student.setName("Petro");
-        //userRepository.save(student);
+        Student student = new Student();
+        student.setName("Petro");
+        userRepository.save(student);
         return "pong";
     }
 }
