@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create table with photos
+      author: a-level
+      changes:
+        - createTable:
+            schemaName: demo
+            tableName: photo
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    - primaryKey: true
+                    - unique: true
+                    - nullable: false
+              - column:
+                  name: url
+                  type: text
+              - column:
+                  name: student_id
+                  type: bigint
+
+        - addForeignKeyConstraint:
+            baseColumnNames: student_id
+            baseTableName: photo
+            baseTableSchemaName: demo
+            constraintName: fk_photo_to_student
+            referencedColumnNames: id
+            referencedTableName: student
+            referencedTableSchemaName: demo

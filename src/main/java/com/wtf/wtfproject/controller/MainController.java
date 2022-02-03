@@ -1,6 +1,8 @@
 package com.wtf.wtfproject.controller;
 
+import com.wtf.wtfproject.entity.Photo;
 import com.wtf.wtfproject.entity.Student;
+import com.wtf.wtfproject.repository.PhotoRepository;
 import com.wtf.wtfproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -15,17 +17,25 @@ public class MainController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PhotoRepository photoRepository;
+
     @GetMapping("/")
     public String home(Model model) {
-        return "use https://wtf-project2.herokuapp.com/ping to add Petro to the table " + "_____" + "use https://wtf-project2.herokuapp.com/students to show all students " + "_____" + " use https://wtf-project2.herokuapp.com//create-random-student to create random student";
+        return "use https://wtf-project2.herokuapp.com/students to show all students " + "_____" + " use https://wtf-project2.herokuapp.com//create-random-student to create random student";
     }
 
     @GetMapping("/ping")
     public String ping(){
         Student student = new Student();
-        student.setName("Petro");
+        student.setName("Vasiliy");
         userRepository.save(student);
-        return "pong";
+
+        Photo photo = new Photo();
+        photo.setUrl("http://qwertyuiop.com/1488228");
+        photo.setStudent(student);
+        photoRepository.save(photo);
+        return "student with photo was created";
     }
 
     @GetMapping("/students")
